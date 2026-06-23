@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" style="-fx-background-image: url('C:/Users/juanj/Downloads/minimalistic-wallpapers-v0-mf3kc4evcztd1.jpg');;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" style="-fx-background-image: url('C:/Users/juanj/Downloads/minimalistic-wallpapers-v0-mf3kc4evcztd1.jpg');;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproyecto_50zo.controller.GameController">
    <children>
       <ImageView fitHeight="750.0" fitWidth="1100.0" pickOnBounds="true">
          <image>
@@ -125,9 +125,9 @@
             <Image url="@images/text-area.png" />
          </image>
       </ImageView>
-      <Label fx:id="pointLabel" layoutX="848.0" layoutY="650.0" text="Puntos">
+      <Label fx:id="pointLabel" layoutX="848.0" layoutY="668.0" text="Puntos" textFill="WHITE">
          <font>
-            <Font name="Courier New" size="62.0" />
+            <Font name="m6x11plus Regular" size="36.0" />
          </font>
       </Label>
    </children>
