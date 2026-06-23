@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" style="-fx-background-image: url('C:/Users/juanj/Downloads/minimalistic-wallpapers-v0-mf3kc4evcztd1.jpg');;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -118,5 +120,15 @@
             <Image url="@images/cards/Deck.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="255.0" layoutX="833.0" layoutY="655.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/text-area.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="pointLabel" layoutX="848.0" layoutY="650.0" text="Puntos">
+         <font>
+            <Font name="Courier New" size="62.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -1,4 +1,4 @@
-module com.example.miniproyecto_sudoku {
+module com.example.miniproyecto_50zo {
     requires javafx.controls;
     requires javafx.fxml;
 
