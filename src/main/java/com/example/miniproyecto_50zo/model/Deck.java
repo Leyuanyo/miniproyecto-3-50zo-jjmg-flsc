@@ -1,6 +1,7 @@
 package com.example.miniproyecto_50zo.model;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
 import java.util.List;
@@ -24,26 +25,29 @@ public class Deck {
     }
 
     public void shuffle() {
-        List<Card> temp = new java.util.ArrayList<>(cards);
+        List<Card> temp = new ArrayList<>(cards);
         Collections.shuffle(temp);
         cards.clear();
         cards.addAll(temp);
     }
 
-    public Card draw() {
+    public Card dealCard() {
         return cards.poll();
     }
 
-    public boolean isEmpty() {
-        return cards.isEmpty();
+    public void addToBottom(Card card) {
+        card.setFaceUp(false);
+        cards.addLast(card);
     }
 
-    public int size() {
-        return cards.size();
+    public void recyclePile(List<Card> pile) {
+        Collections.shuffle(pile);
+        for (Card card : pile) {
+            card.setFaceUp(false);
+            cards.addLast(card);
+        }
     }
 
-    public void refillFromTablePile(List<Card> tableCardsExceptLast) {
-        cards.addAll(tableCardsExceptLast);
-        shuffle();
-    }
+    public boolean isEmpty() { return cards.isEmpty(); }
+    public int size() { return cards.size(); }
 }

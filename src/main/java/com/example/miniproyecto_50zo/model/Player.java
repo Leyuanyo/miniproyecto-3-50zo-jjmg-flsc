@@ -1,6 +1,8 @@
 package com.example.miniproyecto_50zo.model;
 
 import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Player {
 
@@ -16,35 +18,54 @@ public class Player {
         this.eliminated = false;
     }
 
-    public void addCard(Card card) {
-        hand.add(card);
+    public Card selectCard(int currentSum) {
+        if (!isMachine) return null;
+
+        List<Card> playable = hand.stream()
+                .filter(card -> card.isPlayable(currentSum))
+                .collect(Collectors.toList());
+
+        if (playable.isEmpty()) return null;
+
+        Card best = null;
+        int bestSum = -1;
+
+        for (Card card : playable) {
+            int result = currentSum + card.getValue(currentSum);
+            if (result > bestSum) {
+                bestSum = result;
+                best = card;
+            }
+        }
+
+        return best;
     }
 
-    public boolean playCard(Card card) {
-        return hand.remove(card);
+    public boolean canPlay(int currentSum) {
+        for (Card card : hand) {
+            if (card.isPlayable(currentSum)) return true;
+        }
+        return false;
     }
 
-    public LinkedList<Card> getHand() {
-        return hand;
+    public void drawCard(Card card) { hand.add(card); }
+
+    public boolean isEliminated() { return eliminated; }
+
+    public void eliminate() { this.eliminated = true; }
+
+    public void removeCard(Card card) { hand.remove(card); }
+
+    public List<Card> clearHand() {
+        List<Card> remaining = new LinkedList<>(hand);
+        hand.clear();
+        return remaining;
     }
 
-    public String getName() {
-        return name;
-    }
+    public boolean isMachine() { return isMachine; }
+    public String getName() { return name; }
+    public LinkedList<Card> getHand() { return hand; }
 
-    public boolean isMachine() {
-        return isMachine;
-    }
-
-    public boolean isEliminated() {
-        return eliminated;
-    }
-
-    public void setEliminated(boolean eliminated) {
-        this.eliminated = eliminated;
-    }
-
-    public int handSize() {
-        return hand.size();
-    }
+    @Override
+    public String toString() { return name; }
 }
