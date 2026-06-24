@@ -10,9 +10,6 @@ import javafx.scene.input.MouseEvent;
 public class GameOverController {
 
     @FXML
-    private ImageView backToMenuButton;
-
-    @FXML
     private Label winnerLabel;
 
     @FXML

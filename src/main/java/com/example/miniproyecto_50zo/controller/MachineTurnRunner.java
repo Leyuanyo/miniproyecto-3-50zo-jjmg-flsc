@@ -12,9 +12,9 @@ import java.util.Random;
 public class MachineTurnRunner {
 
     private static final int PLAY_DELAY_MIN_MS = 2000;
-    private static final int PLAY_DELAY_RANGE_MS = 2000; // 2 to 4 seconds total
+    private static final int PLAY_DELAY_RANGE_MS = 2000;
     private static final int DRAW_DELAY_MIN_MS = 1000;
-    private static final int DRAW_DELAY_RANGE_MS = 1000; // 1 to 2 seconds total
+    private static final int DRAW_DELAY_RANGE_MS = 1000;
 
     private final GameModel gameModel;
     private final Random random;
@@ -38,8 +38,6 @@ public class MachineTurnRunner {
                     try {
                         gameModel.playCard(machine, chosen);
                     } catch (InvalidCardPlayException e) {
-                        // The machine's own selectCard() already filters
-                        // playable cards, so this should not normally happen.
                         System.err.println("Machine attempted an invalid play: " + e.getMessage());
                     }
                 }
