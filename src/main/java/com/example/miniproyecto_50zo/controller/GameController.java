@@ -18,7 +18,6 @@ import java.util.List;
 
 public class GameController implements GameObserver {
 
-    // Card sizes matching the current FXML layout for the 1100x750 window
     private static final double HUMAN_CARD_WIDTH = 130;
     private static final double HUMAN_CARD_HEIGHT = 185;
     private static final double MACHINE_CARD_WIDTH = 90;
@@ -60,9 +59,35 @@ public class GameController implements GameObserver {
         hasPlayedThisTurn = false;
 
         deckView.setOnMouseClicked(event -> handleDrawCard());
+        setupKeyboardShortcuts();
 
         renderAll();
         startTurnIfMachine();
+    }
+
+    private void setupKeyboardShortcuts() {
+        humanHBox.sceneProperty().addListener((observable, oldScene, newScene) -> {
+            if (newScene != null) {
+                newScene.setOnKeyPressed(event -> {
+                    switch (event.getCode()) {
+                        case DIGIT1 -> handlePlayCardAtIndex(0);
+                        case DIGIT2 -> handlePlayCardAtIndex(1);
+                        case DIGIT3 -> handlePlayCardAtIndex(2);
+                        case DIGIT4 -> handlePlayCardAtIndex(3);
+                        case SPACE -> handleDrawCard();
+                        default -> { /* ignore other keys */ }
+                    }
+                });
+            }
+        });
+    }
+
+    private void handlePlayCardAtIndex(int index) {
+        Player human = gameModel.getPlayers().get(0);
+        List<Card> hand = human.getHand();
+        if (index < hand.size()) {
+            handlePlayCard(hand.get(index));
+        }
     }
 
     private void renderHand(HBox container, List<Card> hand, boolean isMachine,
@@ -217,8 +242,8 @@ public class GameController implements GameObserver {
     @Override
     public void onGameOver(Player winner) {
         renderAll();
-        showWarning("Fin del juego", winner.getName() + " ha ganado la partida.");
-        // Cambiar esto por un fxml para el HU-6
+        com.example.miniproyecto_50zo.view.GameResult.setWinnerName(winner.getName());
+        com.example.miniproyecto_50zo.view.GameStage.loadScene("game-over-view.fxml");
     }
 
     @Override

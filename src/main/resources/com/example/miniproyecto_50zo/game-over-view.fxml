@@ -14,12 +14,12 @@
             <Image url="@images/background.gif" />
          </image>
       </ImageView>
-      <ImageView fitHeight="117.0" fitWidth="458.0" layoutX="317.0" layoutY="79.0" pickOnBounds="true">
+      <ImageView fitHeight="117.0" fitWidth="604.0" layoutX="245.0" layoutY="78.0" pickOnBounds="true">
          <image>
             <Image url="@images/text-area.png" />
          </image>
       </ImageView>
-      <Label fx:id="winnerLabel" contentDisplay="CENTER" layoutX="341.0" layoutY="75.0" prefHeight="123.0" prefWidth="411.0" text="El Jugador:" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+      <Label fx:id="winnerLabel" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="284.0" layoutY="75.0" prefHeight="123.0" prefWidth="539.0" text="El Jugador:" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
          <font>
             <Font name="m6x11plus Regular" size="84.0" />
          </font>
