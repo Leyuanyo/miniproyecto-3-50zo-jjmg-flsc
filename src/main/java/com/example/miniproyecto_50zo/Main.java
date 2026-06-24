@@ -14,6 +14,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         GameStage.setPrimaryStage(primaryStage);
-        GameStage.loadScene("main-menu-view.fxml");
+        GameStage.loadScene("game-over-view.fxml");
     }
 }
