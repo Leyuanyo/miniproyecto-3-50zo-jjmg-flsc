@@ -101,11 +101,35 @@ public class GameController implements GameObserver {
             imageView.setPreserveRatio(true);
 
             if (!isMachine) {
-                imageView.setOnMouseClicked(event -> handlePlayCard(card));
+                attachCardInteraction(imageView, card);
             }
 
             container.getChildren().add(imageView);
         }
+    }
+
+    private void attachCardInteraction(ImageView imageView, Card card) {
+        com.example.miniproyecto_50zo.controller.adapter.CardInteractionAdapter adapter =
+                new com.example.miniproyecto_50zo.controller.adapter.CardInteractionAdapter() {
+                    @Override
+                    public void onCardHoverEnter(Card card) {
+                        imageView.setStyle("-fx-effect: dropshadow(gaussian, gold, 15, 0.6, 0, 0);");
+                    }
+
+                    @Override
+                    public void onCardHoverExit(Card card) {
+                        imageView.setStyle(null);
+                    }
+
+                    @Override
+                    public void onCardClicked(Card card) {
+                        handlePlayCard(card);
+                    }
+                };
+
+        imageView.setOnMouseEntered(event -> adapter.onCardHoverEnter(card));
+        imageView.setOnMouseExited(event -> adapter.onCardHoverExit(card));
+        imageView.setOnMouseClicked(event -> adapter.onCardClicked(card));
     }
 
     private void handlePlayCard(Card card) {
