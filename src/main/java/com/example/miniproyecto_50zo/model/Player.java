@@ -28,7 +28,7 @@ public class Player {
         if (playable.isEmpty()) return null;
 
         Card best = null;
-        int bestSum = -1;
+        int bestSum = Integer.MIN_VALUE;
 
         for (Card card : playable) {
             int result = currentSum + card.getValue(currentSum);
