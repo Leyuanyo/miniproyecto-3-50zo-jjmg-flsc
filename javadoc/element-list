@@ -1,0 +1,9 @@
+module:com.example.miniproyecto_50zo
+com.example.miniproyecto_50zo
+com.example.miniproyecto_50zo.controller
+com.example.miniproyecto_50zo.controller.adapter
+com.example.miniproyecto_50zo.exceptions
+com.example.miniproyecto_50zo.model
+com.example.miniproyecto_50zo.model.interfaces
+com.example.miniproyecto_50zo.util
+com.example.miniproyecto_50zo.view

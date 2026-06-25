@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproyecto_50zo.controller.GameOverController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="1100.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/background.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="117.0" fitWidth="604.0" layoutX="245.0" layoutY="78.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/text-area.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="winnerLabel" alignment="CENTER" contentDisplay="TOP" ellipsisString="" layoutX="284.0" layoutY="75.0" prefHeight="123.0" prefWidth="539.0" text="El Jugador:" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="m6x11plus Regular" size="84.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="104.0" fitWidth="392.0" layoutX="354.0" layoutY="326.0" onMouseClicked="#handleMenu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/text-area.png" />
+         </image>
+         <effect>
+            <ColorAdjust hue="0.82" />
+         </effect>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="383.0" layoutY="326.0" mouseTransparent="true" prefHeight="99.0" prefWidth="339.0" text="Volver al menu" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="m6x11plus Regular" size="68.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.miniproyecto_50zo.controller.MainMenuController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="1100.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/background.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="183.0" fitWidth="458.0" layoutX="317.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/text-area.png" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="482.0" layoutY="75.0" prefHeight="123.0" prefWidth="137.0" text="50zo" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="m6x11plus Regular" size="84.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="oneMachineButton" fitHeight="104.0" fitWidth="392.0" layoutX="142.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/text-area.png" />
+         </image>
+         <effect>
+            <ColorAdjust hue="0.82" />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="twoMachineButton" fitHeight="104.0" fitWidth="392.0" layoutX="563.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/text-area.png" />
+         </image>
+         <effect>
+            <ColorAdjust hue="0.82" />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="threeMachinesButton" fitHeight="104.0" fitWidth="392.0" layoutX="353.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/text-area.png" />
+         </image>
+         <effect>
+            <ColorAdjust hue="0.82" />
+         </effect>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="203.0" layoutY="277.0" mouseTransparent="true" prefHeight="123.0" prefWidth="283.0" text="1 Maquina" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="m6x11plus Regular" size="84.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="605.0" layoutY="278.0" mouseTransparent="true" prefHeight="123.0" prefWidth="328.0" text="2 Maquinas" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="m6x11plus Regular" size="84.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="395.0" layoutY="407.0" mouseTransparent="true" prefHeight="123.0" prefWidth="328.0" text="3 Maquinas" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="m6x11plus Regular" size="84.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
